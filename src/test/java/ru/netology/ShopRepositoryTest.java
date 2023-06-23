@@ -1,5 +1,6 @@
 package ru.netology;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,6 @@ Product product2 = new Product(18,"Кепка", 50);
 ShopRepository repo = new ShopRepository();
 repo.add(product1);
 repo.add(product2);
-repo.remove(55);
 
     Assertions.assertThrows( NotFoundException.class, () -> {
         repo.remove(55);
@@ -26,6 +26,6 @@ repo.remove(55);
 
     Product [] actual = repo.findAll();
     Product [] expected = {product2};
-    Assertions.assertArrayEquals(expected, actual);
+  Assert.assertArrayEquals(expected, actual);
 }
 }
