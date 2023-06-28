@@ -55,6 +55,7 @@ public class ShopRepository {
         }
         products = tmp;
     }
+
     public Product findById(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
